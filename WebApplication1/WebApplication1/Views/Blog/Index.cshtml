@@ -1,0 +1,19 @@
+@model List<WebApplication1.Models.BlogArticleViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Blog Articles</h1>
+</div>
+
+<ul class="list-group mt-4">
+    @foreach (var article in Model)
+    {
+        <li class="list-group-item">
+            <h5>
+                <a asp-controller="Blog" asp-action="Article" asp-route-id="@article.Id" class="text-dark">
+                    @article.Title
+                </a>
+            </h5>
+            <p class="mb-1 text-muted">@article.Description</p>
+        </li>
+    }
+</ul>
